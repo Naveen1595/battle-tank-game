@@ -1,21 +1,25 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MonoSingletonGeneric<T> : MonoBehaviour where T : MonoSingletonGeneric<T>
 {
     private static T instance;
-    public T Instance { get { return instance; } }
-    private void Awake()
+    private static object m_lock = new Object();
+    public static T Instance()
     {
-        if (instance == null)
+        lock (m_lock)
         {
-            instance = (T)this;
-           
+            if (instance == null)
+            {
+                instance = FindObjectOfType<T>();
+                if (instance == null)
+                {
+                    GameObject obj = new GameObject();
+                    obj.name = typeof(T).ToString();
+                    instance = obj.AddComponent<T>();
+                    DontDestroyOnLoad(obj);
+                }
+            }
         }
-        else
-        {
-            Destroy(this);
-        }
+        return instance;
     }
 }

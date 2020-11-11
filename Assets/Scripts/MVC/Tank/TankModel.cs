@@ -1,16 +1,28 @@
-﻿using System.Collections;
+﻿/*using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
+using UnityEditor.SceneManagement;*/
 using UnityEngine;
 
 public class TankModel
 {
-    public TankModel(int speed, float health)
+    private float playerTankSpeed;
+    private float playerTankHealth;
+    public TankModel(float speed, float health)
     {
-        Speed = speed;
-        Health = health;
+        playerTankSpeed = speed;
+        playerTankHealth = health;  
     }
 
-    public int Speed { get; private set; }
-    public float Health { get; private set; }
+    public Vector3 PlayerTankMove(float playerTankVerticalMove,Transform playerTankTransform)
+    {
+        Vector3 movement = playerTankTransform.transform.forward * playerTankVerticalMove * playerTankSpeed * Time.deltaTime;
+        return movement;
+    }
+
+    public Quaternion PlayerTankTurn(float playerTankHorizontalMove)
+    {
+        float turn = playerTankHorizontalMove * 100f * Time.deltaTime;
+        Quaternion turnRotation = Quaternion.Euler(0f, turn, 0f);
+        return turnRotation;
+    }
 }
