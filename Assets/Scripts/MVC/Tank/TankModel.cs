@@ -7,10 +7,12 @@ public class TankModel
 {
     private float playerTankSpeed;
     private float playerTankHealth;
-    public TankModel(float speed, float health)
+    private TankType playerTankType;
+    public TankModel(TankScriptableObject tankScriptableObject)
     {
-        playerTankSpeed = speed;
-        playerTankHealth = health;  
+        playerTankType = tankScriptableObject.tankType;
+        playerTankSpeed = tankScriptableObject.speed;
+        playerTankHealth = tankScriptableObject.health;  
     }
 
     public Vector3 PlayerTankMove(float playerTankVerticalMove,Transform playerTankTransform)

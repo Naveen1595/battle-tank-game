@@ -744,6 +744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2145bff09ae24944d8e348a880edcd3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tankType: 1
 --- !u!4 &1730716730
 Transform:
   m_ObjectHideFlags: 0
@@ -892,9 +893,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7258808552109190653, guid: acde0264b3c2e5d4e8b9a5788953165d,
         type: 3}
+      propertyPath: tankConfiguration.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7258808552109190653, guid: acde0264b3c2e5d4e8b9a5788953165d,
+        type: 3}
       propertyPath: tankView
       value: 
       objectReference: {fileID: 1730716729}
+    - target: {fileID: 7258808552109190653, guid: acde0264b3c2e5d4e8b9a5788953165d,
+        type: 3}
+      propertyPath: tankConfiguration.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3d1143d9924a3d94d9ce31ff1d435b60,
+        type: 2}
+    - target: {fileID: 7258808552109190653, guid: acde0264b3c2e5d4e8b9a5788953165d,
+        type: 3}
+      propertyPath: tankConfiguration.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 90c3b9478d03dfc4d922e246b8bd083e,
+        type: 2}
+    - target: {fileID: 7258808552109190653, guid: acde0264b3c2e5d4e8b9a5788953165d,
+        type: 3}
+      propertyPath: tankConfiguration.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6fa12608f06f9c74dbb28ed3e80bed9e,
+        type: 2}
+    - target: {fileID: 7258808552109190653, guid: acde0264b3c2e5d4e8b9a5788953165d,
+        type: 3}
+      propertyPath: tankList
+      value: 
+      objectReference: {fileID: 11400000, guid: 2293811f9a6656847a5132504acf44d0,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: acde0264b3c2e5d4e8b9a5788953165d, type: 3}
 --- !u!1 &7258808552109190652 stripped

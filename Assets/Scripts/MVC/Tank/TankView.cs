@@ -4,5 +4,6 @@ using UnityEngine;
 
 public class TankView : MonoBehaviour
 {
+    [SerializeField]private TankType tankType;
   
 }
