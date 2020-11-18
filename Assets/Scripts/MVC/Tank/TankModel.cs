@@ -15,6 +15,15 @@ public class TankModel
         playerTankHealth = tankScriptableObject.health;  
     }
 
+    public float GetPlayerHealth()
+    {
+        return playerTankHealth;
+    }
+
+    public void SetPlayerHealth(float damage)
+    {
+        playerTankHealth -= damage; 
+    }
     public Vector3 PlayerTankMove(float playerTankVerticalMove,Transform playerTankTransform)
     {
         Vector3 movement = playerTankTransform.transform.forward * playerTankVerticalMove * playerTankSpeed * Time.deltaTime;
