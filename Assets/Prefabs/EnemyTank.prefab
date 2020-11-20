@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 709752399}
   - component: {fileID: 709752401}
   - component: {fileID: 709752400}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RightDustTrail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4664,7 +4664,7 @@ GameObject:
   - component: {fileID: 1477255651}
   - component: {fileID: 1477255653}
   - component: {fileID: 1477255652}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeftDustTrail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9317,7 +9317,7 @@ GameObject:
   - component: {fileID: 1526031446}
   - component: {fileID: 1526031449}
   - component: {fileID: 1526031448}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EnemyTankChassis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9396,7 +9396,7 @@ GameObject:
   - component: {fileID: 1684959835}
   - component: {fileID: 1684959838}
   - component: {fileID: 1684959837}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EnemyTankTracksRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9474,7 +9474,7 @@ GameObject:
   - component: {fileID: 1825476616}
   - component: {fileID: 1825476619}
   - component: {fileID: 1825476618}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EnmeyTankTurret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9552,7 +9552,7 @@ GameObject:
   - component: {fileID: 1923445284}
   - component: {fileID: 1923445287}
   - component: {fileID: 1923445286}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EnemyTankTracksLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9628,7 +9628,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1976799247}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EnemyTankRenderers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9653,6 +9653,36 @@ Transform:
   m_Father: {fileID: 2198871243311473962}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &619968633590327546
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 228028903109286675}
+  m_Layer: 8
+  m_Name: FireBullet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &228028903109286675
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619968633590327546}
+  m_LocalRotation: {x: 0.08715596, y: -0, z: -0, w: -0.9961947}
+  m_LocalPosition: {x: 0, y: 1.7, z: 1.35}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2198871243311473962}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 350, y: 0, z: 0}
 --- !u!1 &793411805628205805
 GameObject:
   m_ObjectHideFlags: 0
@@ -9664,7 +9694,7 @@ GameObject:
   - component: {fileID: 5503659961572494303}
   - component: {fileID: 6021582782762240094}
   - component: {fileID: 7737665456708551804}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9736,7 +9766,7 @@ GameObject:
   - component: {fileID: 7731691621282800314}
   - component: {fileID: 1001997913054482852}
   - component: {fileID: 138420687722418004}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9808,7 +9838,7 @@ GameObject:
   - component: {fileID: 7725786801420283053}
   - component: {fileID: 8639620023043708504}
   - component: {fileID: 3760126086567235372}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: HealthSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9908,7 +9938,7 @@ GameObject:
   - component: {fileID: 2170360590739063337}
   - component: {fileID: 6709584493617547234}
   - component: {fileID: 6709584493617547233}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EnemyTank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9930,6 +9960,7 @@ Transform:
   - {fileID: 1477255651}
   - {fileID: 709752399}
   - {fileID: 5591252052361269406}
+  - {fileID: 228028903109286675}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9995,7 +10026,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7523516798253530332}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10034,7 +10065,7 @@ GameObject:
   - component: {fileID: 5873557190283540651}
   - component: {fileID: 3111770201104392537}
   - component: {fileID: 1889831974030734374}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
