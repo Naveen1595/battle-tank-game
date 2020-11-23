@@ -13,9 +13,6 @@ public class TankMove : MonoBehaviour
     {
         joystick = FindObjectOfType<Joystick>();
         rb3d = GetComponent<Rigidbody>();
-
-        /*m_moveTankName = "Vertical";
-        m_turnTankName = "Horizontal";*/
     }
     private void Update()
     {

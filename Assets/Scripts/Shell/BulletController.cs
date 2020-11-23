@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class BulletController : MonoBehaviour
@@ -8,20 +7,13 @@ public class BulletController : MonoBehaviour
     public Rigidbody shellRDBD;
     public Transform aimTransform;
     public float fireForce;
-
-    private string fireButton;
     private bool isFired;
-
-    private void Awake()
-    {
-        button.onClick.AddListener(MakeFireBulletTrue);
-    }
-
 
     private void Start()
     {
-        fireButton = "Fire";
+        button.onClick.AddListener(FireBulletPressed);
     }
+
 
     private void Update()
     {
@@ -32,7 +24,7 @@ public class BulletController : MonoBehaviour
         }
     }
 
-    private void MakeFireBulletTrue()
+    private void FireBulletPressed()
     {
         isFired = true;
     }

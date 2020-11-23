@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6be9e16d5aef8fa4f9aa7790a1540001, type: 3}
-  m_Name: GreenTank
+  m_Script: {fileID: 11500000, guid: 3310f652ac51c5149b022e7bbf3a3dd9, type: 3}
+  m_Name: RedTanks
   m_EditorClassIdentifier: 
-  tankType: 1
-  tankName: GreenTank
-  speed: 10
+  tankType: 3
+  tankName: RedTanks
+  speed: 0
   health: 100

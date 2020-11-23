@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 709752399}
   - component: {fileID: 709752401}
   - component: {fileID: 709752400}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: RightDustTrail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4664,7 +4664,7 @@ GameObject:
   - component: {fileID: 1477255651}
   - component: {fileID: 1477255653}
   - component: {fileID: 1477255652}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: LeftDustTrail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9317,7 +9317,7 @@ GameObject:
   - component: {fileID: 1526031446}
   - component: {fileID: 1526031449}
   - component: {fileID: 1526031448}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: EnemyTankChassis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9396,7 +9396,7 @@ GameObject:
   - component: {fileID: 1684959835}
   - component: {fileID: 1684959838}
   - component: {fileID: 1684959837}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: EnemyTankTracksRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9474,7 +9474,7 @@ GameObject:
   - component: {fileID: 1825476616}
   - component: {fileID: 1825476619}
   - component: {fileID: 1825476618}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: EnmeyTankTurret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9552,7 +9552,7 @@ GameObject:
   - component: {fileID: 1923445284}
   - component: {fileID: 1923445287}
   - component: {fileID: 1923445286}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: EnemyTankTracksLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9628,7 +9628,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1976799247}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: EnemyTankRenderers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9662,7 +9662,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 228028903109286675}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: FireBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9676,13 +9676,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 619968633590327546}
-  m_LocalRotation: {x: 0.08715596, y: -0, z: -0, w: -0.9961947}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: -1}
   m_LocalPosition: {x: 0, y: 1.7, z: 1.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2198871243311473962}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 350, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 360, y: 0, z: 0}
 --- !u!1 &793411805628205805
 GameObject:
   m_ObjectHideFlags: 0
@@ -9694,7 +9694,7 @@ GameObject:
   - component: {fileID: 5503659961572494303}
   - component: {fileID: 6021582782762240094}
   - component: {fileID: 7737665456708551804}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9766,7 +9766,7 @@ GameObject:
   - component: {fileID: 7731691621282800314}
   - component: {fileID: 1001997913054482852}
   - component: {fileID: 138420687722418004}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9837,8 +9837,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7725786801420283053}
   - component: {fileID: 8639620023043708504}
-  - component: {fileID: 3760126086567235372}
-  m_Layer: 8
+  - component: {fileID: 5335385221762246483}
+  - component: {fileID: 1151881447}
+  m_Layer: 0
   m_Name: HealthSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9913,7 +9914,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &3760126086567235372
+--- !u!114 &5335385221762246483
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9922,7 +9923,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 4282704056822441339}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebadd2b0319f7534ebe81a09ff65aca8, type: 3}
+  m_Script: {fileID: 11500000, guid: 58c2255034d910c49a0d979ffbace145, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1151881447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4282704056822441339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58c2255034d910c49a0d979ffbace145, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6224467204050822874
@@ -9936,11 +9949,10 @@ GameObject:
   - component: {fileID: 2198871243311473962}
   - component: {fileID: 4585597219372106552}
   - component: {fileID: 2170360590739063337}
-  - component: {fileID: 6709584493617547234}
   - component: {fileID: 6709584493617547233}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: EnemyTank
-  m_TagString: Untagged
+  m_TagString: EnemyTank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9953,7 +9965,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6224467204050822874}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.37, y: 0.92383575, z: -0.0641551}
+  m_LocalPosition: {x: -9.37, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1976799247}
@@ -9961,6 +9973,7 @@ Transform:
   - {fileID: 709752399}
   - {fileID: 5591252052361269406}
   - {fileID: 228028903109286675}
+  - {fileID: 9048447893447366095}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9978,7 +9991,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 84
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &2170360590739063337
 BoxCollider:
@@ -9993,18 +10006,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.7270929, y: 1.9409437, z: 2.3429828}
   m_Center: {x: 0.0042770505, y: 0.92383575, z: -0.06415516}
---- !u!114 &6709584493617547234
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6224467204050822874}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3243d1fcbf475374cbd28892a5cf21de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6709584493617547233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10017,6 +10018,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81d50e816211ef34e8ec2fa4dee0a442, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyHealthSlider: {fileID: 8639620023043708504}
+  enemyfillImageSlider: {fileID: 7737665456708551804}
+  enemyHealthZeroColor: {r: 0.9433962, g: 0.1359915, b: 0.06674972, a: 0}
+  enemyHealthMaxColor: {r: 0.31179237, g: 0.8113208, b: 0.08036668, a: 0}
+  enemyTankExplosionEffect: {fileID: 9048447893432057345}
+  enemyTankHealth: 100
+  enemyTankSpeed: 0
+  damageValue: 50
 --- !u!1 &7091088175975358584
 GameObject:
   m_ObjectHideFlags: 0
@@ -10026,7 +10035,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7523516798253530332}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10065,7 +10074,8 @@ GameObject:
   - component: {fileID: 5873557190283540651}
   - component: {fileID: 3111770201104392537}
   - component: {fileID: 1889831974030734374}
-  m_Layer: 8
+  - component: {fileID: 1168408651}
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10152,3 +10162,100 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &1168408651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8413132008969438499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1679637790, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreLayout: 0
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: -1
+  m_PreferredHeight: -1
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 2
+--- !u!1001 &9048447893446950003
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2198871243311473962}
+    m_Modifications:
+    - target: {fileID: 151086, guid: ee49a9a8678ecf8468eb488e1ac8d42b, type: 3}
+      propertyPath: m_Name
+      value: EnemyTankExplosion
+      objectReference: {fileID: 0}
+    - target: {fileID: 436668, guid: ee49a9a8678ecf8468eb488e1ac8d42b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 436668, guid: ee49a9a8678ecf8468eb488e1ac8d42b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 436668, guid: ee49a9a8678ecf8468eb488e1ac8d42b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 436668, guid: ee49a9a8678ecf8468eb488e1ac8d42b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 436668, guid: ee49a9a8678ecf8468eb488e1ac8d42b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 436668, guid: ee49a9a8678ecf8468eb488e1ac8d42b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 436668, guid: ee49a9a8678ecf8468eb488e1ac8d42b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 436668, guid: ee49a9a8678ecf8468eb488e1ac8d42b, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 436668, guid: ee49a9a8678ecf8468eb488e1ac8d42b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 436668, guid: ee49a9a8678ecf8468eb488e1ac8d42b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 436668, guid: ee49a9a8678ecf8468eb488e1ac8d42b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 436668, guid: ee49a9a8678ecf8468eb488e1ac8d42b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 436668, guid: ee49a9a8678ecf8468eb488e1ac8d42b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ee49a9a8678ecf8468eb488e1ac8d42b, type: 3}
+--- !u!4 &9048447893447366095 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 436668, guid: ee49a9a8678ecf8468eb488e1ac8d42b,
+    type: 3}
+  m_PrefabInstance: {fileID: 9048447893446950003}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &9048447893432057345 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 19874418, guid: ee49a9a8678ecf8468eb488e1ac8d42b,
+    type: 3}
+  m_PrefabInstance: {fileID: 9048447893446950003}
+  m_PrefabAsset: {fileID: 0}

@@ -1,43 +1,33 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class EnemyController : MonoBehaviour
+public abstract class BaseEnemy : MonoBehaviour
 {
     [SerializeField] private Slider enemyHealthSlider;
     [SerializeField] private Image enemyfillImageSlider;
     [SerializeField] private Color enemyHealthZeroColor;
     [SerializeField] private Color enemyHealthMaxColor;
-    [SerializeField] private ParticleSystem enemyTankExplosionEffect;
     private Rigidbody enemyrb3dTank;
     private Transform enemyTankTransform;
     private TankType enemyTankType;
     private float enemyCurrentHealth;
-    [SerializeField]private float enemyTankHealth;
+    [SerializeField] private float enemyTankHealth;
     [SerializeField] private float enemyTankSpeed;
     [SerializeField] private float damageValue;
     private bool _isEnemyDead;
+
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.GetComponent<ShellExplosion>() != null)
         {
-
             TakeDamage(damageValue);
-        }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.GetComponent<TankController>() !=null)
-        {
-            OnDeath();
         }
     }
     private void Awake()
     {
         enemyHealthZeroColor = Color.red;
         enemyHealthMaxColor = Color.green;
-
     }
 
     private void Start()
@@ -55,7 +45,7 @@ public class EnemyController : MonoBehaviour
         enemyTankSpeed = enemyTankScriptableObjects.speed;
         enemyTankHealth = enemyTankScriptableObjects.health;
     }
-    
+
     public void SetEnemyHealthUI()
     {
         enemyHealthSlider.value = enemyCurrentHealth;
@@ -74,8 +64,6 @@ public class EnemyController : MonoBehaviour
 
     private void OnDeath()
     {
-        enemyTankExplosionEffect.transform.parent = null;
-        enemyTankExplosionEffect.Play();
         _isEnemyDead = true;
         Vector3 newPos = new Vector3(Random.Range(-4f, -20f), 0f, Random.Range(0.4f, 5f));
         enemyTankTransform.position = newPos;

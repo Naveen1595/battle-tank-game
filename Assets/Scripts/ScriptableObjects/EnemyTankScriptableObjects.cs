@@ -8,13 +8,11 @@ public class EnemyTankScriptableObjects : ScriptableObject
     public string tankName;
     public float speed;
     public float health;
-    /*public BulletType bullet;
-    public TankView tankView;*/
 }
 
 [CreateAssetMenu(fileName = "EnemyTankScriptableObjects", menuName = "EnemyTankScriptableObjectsList")]
 
 public class EnemyTankListScriptableObject : ScriptableObject
 {
-    EnemyTankScriptableObjects[] enemyTanks;
+    public EnemyTankScriptableObjects[] enemyTanks;
 }

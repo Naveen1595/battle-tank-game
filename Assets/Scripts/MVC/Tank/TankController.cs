@@ -4,51 +4,34 @@ using UnityEngine.UI;
 
 public class TankController : MonoSingletonGeneric<TankController>
 {
-    public Slider playerHealthSlider;
-    public Image fillImageSlider;
-    private Color playerHealthZeroColor;
-    private Color playerHealthMaxColor;
-    private float playerCurrentHealth;
-    private float playerFullHealth;
-    private bool _isPlayerDead;
-    /*public GameObject playerTankExplosion;*/
-    private Joystick joystick;
-    private float tankVerticalMove, tankHorizontalMove;
     private TankModel tankNewModel;
     private TankView tankNewView;
     private Rigidbody rb3dTank;
     private Transform playerTankTransform;
+    private Joystick joystick;
+    [SerializeField] private ParticleSystem tankExplosionEffect;
+
+    private float playerCurrentHealth;
+    private bool _isPlayerDead;
+    /*public GameObject playerTankExplosion;*/
+    private float tankVerticalMove, tankHorizontalMove;
     private Vector3 movement;
     private Quaternion turnRotation;
 
-    /* public TankController(TankModel tankModel, TankView tankView)
-     {
-         tankNewModel = tankModel;
-         tankNewView = GameObject.Instantiate<TankView>(tankView);
-     }*/
-
-    private void OnEnable()
+    private void OnCollisionEnter(Collision collision)
     {
-        playerCurrentHealth = playerFullHealth;
-        _isPlayerDead = false;
-
-        SetHealthUI();
+        if(collision.gameObject.GetComponent<EnemyController>() !=null)
+        {
+            OnDeath();
+        }
     }
-
-    private void Awake()
-    {
-        playerFullHealth = 100f;
-        playerHealthZeroColor = Color.red;
-        playerHealthMaxColor = Color.green;
-    }
-
     private void Start()
     {
         joystick = FindObjectOfType<Joystick>();
         rb3dTank = gameObject.GetComponent<Rigidbody>();
-        playerTankTransform = gameObject.GetComponent<Transform>();
+        playerTankTransform = gameObject.GetComponent<Transform>();       
+        _isPlayerDead = false;
     }
-
 
     private void FixedUpdate()
     {
@@ -67,6 +50,8 @@ public class TankController : MonoSingletonGeneric<TankController>
     {
         tankNewModel = tankModel;
         tankNewView = GameObject.Instantiate<TankView>(tankView);
+        playerCurrentHealth = tankNewModel.GetPlayerHealth();
+        tankNewView.SetHealthUI();
     }
 
     //Forward Movement of Tank
@@ -86,25 +71,29 @@ public class TankController : MonoSingletonGeneric<TankController>
     public void TakeDamage(float damage)
     {
         playerCurrentHealth -= damage;
-
-        SetHealthUI();
+        tankNewView.SetHealthUI();
         if(playerCurrentHealth <= 0f && !_isPlayerDead)
         {
             OnDeath();
         }
     }
 
-    private void OnDeath()
+    public float GetCurrentHealth()
     {
-        _isPlayerDead = true;
-
-        gameObject.SetActive(false);
+        return playerCurrentHealth;
     }
 
-    private void SetHealthUI()
+    public float GetMaxHealth()
     {
-        playerHealthSlider.value = playerCurrentHealth;
-        fillImageSlider.color = Color.Lerp(playerHealthZeroColor, playerHealthMaxColor, playerCurrentHealth / playerFullHealth);
+        return tankNewModel.GetPlayerHealth();
+    }
+
+    private void OnDeath()
+    {
+        tankExplosionEffect.transform.parent = null;
+        tankExplosionEffect.Play();
+        _isPlayerDead = true;
+        gameObject.SetActive(false);
     }
 
 }

@@ -1,7 +1,4 @@
-﻿/*using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.SceneManagement;*/
-using UnityEngine;
+﻿using UnityEngine;
 
 public class TankService : MonoBehaviour
 {
@@ -15,15 +12,14 @@ public class TankService : MonoBehaviour
     private void StartGame()
     {
         CreateTank();
-        
     }
 
     private TankController CreateTank()
     {
-        TankScriptableObject tankScriptableObject = tankList.tanks[2];
+        TankScriptableObject tankScriptableObject = tankList.tanks[0];
         TankModel tankModel = new TankModel(tankScriptableObject);
-        TankController tank = TankController.Instance();
-        tank.SetModelView(tankModel, tankView);
-        return tank;
+        TankController tankController = TankController.Instance();
+        tankController.SetModelView(tankModel, tankView);
+        return tankController;
     }
 }
