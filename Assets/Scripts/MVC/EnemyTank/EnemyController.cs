@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -47,8 +48,6 @@ public class EnemyController : MonoBehaviour
     {
         enemyrb3dTank = gameObject.GetComponent<Rigidbody>();
         enemyTankTransform = gameObject.GetComponent<Transform>();
-        screenBound = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Camera.main.transform.position.y,Screen.height));
-       /* Debug.Log(" x- " + screenBound.x + " y- " + screenBound.y + " z- " + screenBound.z);*/
         enemyCurrentHealth = enemyTankHealth;
         _isEnemyDead = false;
         SetEnemyHealthUI();
@@ -71,7 +70,7 @@ public class EnemyController : MonoBehaviour
     {
         enemyCurrentHealth -= damage;
         SetEnemyHealthUI();
-        if (enemyCurrentHealth <= 0f /*&& !_isEnemyDead*/)
+        if (enemyCurrentHealth <= 0f)
         {
             OnDeath();
         }
@@ -81,12 +80,17 @@ public class EnemyController : MonoBehaviour
     {
         enemyTankExplosionEffect.transform.parent = null;
         enemyTankExplosionEffect.Play();
+        StartCoroutine(WaitForExplosion());
+    }
+
+  IEnumerator WaitForExplosion()
+  {
         _isEnemyDead = true;
-        Vector3 newPos = new Vector3(UnityEngine.Random.Range(0f, screenBound.x), 0f, UnityEngine.Random.Range(0f, screenBound.z));
-        //Vector3 newPos = new Vector3(41f, 0f, 42f);
+        Vector3 newPos = new Vector3(UnityEngine.Random.Range(-30f, 35f), enemyTankTransform.position.y, UnityEngine.Random.Range(-15f, 35f));
         enemyTankTransform.position = newPos;
         enemyCurrentHealth = enemyTankHealth;
         SetEnemyHealthUI();
+        yield return new WaitForSeconds(2f);
         camMov.Invoke();
     }
 }
