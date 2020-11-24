@@ -1,8 +1,11 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class EnemyController : MonoBehaviour
 {
+    public static event Action camMov;
+    private Vector3 screenBound;
     [SerializeField] private Slider enemyHealthSlider;
     [SerializeField] private Image enemyfillImageSlider;
     [SerializeField] private Color enemyHealthZeroColor;
@@ -36,7 +39,7 @@ public class EnemyController : MonoBehaviour
     private void Awake()
     {
         enemyHealthZeroColor = Color.red;
-        enemyHealthMaxColor = Color.green;
+        enemyHealthMaxColor = Color.cyan;
 
     }
 
@@ -44,6 +47,8 @@ public class EnemyController : MonoBehaviour
     {
         enemyrb3dTank = gameObject.GetComponent<Rigidbody>();
         enemyTankTransform = gameObject.GetComponent<Transform>();
+        screenBound = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Camera.main.transform.position.y,Screen.height));
+       /* Debug.Log(" x- " + screenBound.x + " y- " + screenBound.y + " z- " + screenBound.z);*/
         enemyCurrentHealth = enemyTankHealth;
         _isEnemyDead = false;
         SetEnemyHealthUI();
@@ -77,9 +82,11 @@ public class EnemyController : MonoBehaviour
         enemyTankExplosionEffect.transform.parent = null;
         enemyTankExplosionEffect.Play();
         _isEnemyDead = true;
-        Vector3 newPos = new Vector3(Random.Range(-4f, -20f), 0f, Random.Range(0.4f, 5f));
+        Vector3 newPos = new Vector3(UnityEngine.Random.Range(0f, screenBound.x), 0f, UnityEngine.Random.Range(0f, screenBound.z));
+        //Vector3 newPos = new Vector3(41f, 0f, 42f);
         enemyTankTransform.position = newPos;
         enemyCurrentHealth = enemyTankHealth;
         SetEnemyHealthUI();
+        camMov.Invoke();
     }
 }

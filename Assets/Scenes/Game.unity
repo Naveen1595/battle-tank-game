@@ -488,9 +488,9 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 366199608}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &385795626 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7258808551060378486, guid: acde0264b3c2e5d4e8b9a5788953165d,
+--- !u!4 &385795632 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7258808551060147862, guid: acde0264b3c2e5d4e8b9a5788953165d,
     type: 3}
   m_PrefabInstance: {fileID: 1550186757}
   m_PrefabAsset: {fileID: 0}
@@ -952,6 +952,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerTank
       objectReference: {fileID: 0}
+    - target: {fileID: 7258808551060378486, guid: acde0264b3c2e5d4e8b9a5788953165d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: acde0264b3c2e5d4e8b9a5788953165d, type: 3}
 --- !u!1 &1730716728
@@ -1012,7 +1017,7 @@ GameObject:
   - component: {fileID: 1771596987}
   - component: {fileID: 1771596988}
   m_Layer: 0
-  m_Name: CameraRig
+  m_Name: CameraFollow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1045,7 +1050,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02ca857270d568a47b5db2f91b430404, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 385795626}
+  playerTankTransform: {fileID: 385795632}
 --- !u!1001 &6709584493617547231
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1122,6 +1127,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnemyTank
+      objectReference: {fileID: 0}
+    - target: {fileID: 6709584493617547233, guid: ce189b01a19a92e41aa1b30b59264d58,
+        type: 3}
+      propertyPath: enemyHealthZeroColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6709584493617547233, guid: ce189b01a19a92e41aa1b30b59264d58,
+        type: 3}
+      propertyPath: enemyHealthZeroColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6709584493617547233, guid: ce189b01a19a92e41aa1b30b59264d58,
+        type: 3}
+      propertyPath: enemyHealthZeroColor.b
+      value: 0.027672768
+      objectReference: {fileID: 0}
+    - target: {fileID: 6709584493617547233, guid: ce189b01a19a92e41aa1b30b59264d58,
+        type: 3}
+      propertyPath: enemyHealthMaxColor.r
+      value: 0.3424376
+      objectReference: {fileID: 0}
+    - target: {fileID: 6709584493617547233, guid: ce189b01a19a92e41aa1b30b59264d58,
+        type: 3}
+      propertyPath: enemyHealthMaxColor.g
+      value: 0.735849
+      objectReference: {fileID: 0}
+    - target: {fileID: 6709584493617547233, guid: ce189b01a19a92e41aa1b30b59264d58,
+        type: 3}
+      propertyPath: enemyHealthMaxColor.b
+      value: 0.03818085
+      objectReference: {fileID: 0}
+    - target: {fileID: 6709584493617547233, guid: ce189b01a19a92e41aa1b30b59264d58,
+        type: 3}
+      propertyPath: damageValue
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce189b01a19a92e41aa1b30b59264d58, type: 3}

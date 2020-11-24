@@ -13,7 +13,6 @@ public class TankController : MonoSingletonGeneric<TankController>
 
     private float playerCurrentHealth;
     private bool _isPlayerDead;
-    /*public GameObject playerTankExplosion;*/
     private float tankVerticalMove, tankHorizontalMove;
     private Vector3 movement;
     private Quaternion turnRotation;
