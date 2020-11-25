@@ -44,8 +44,8 @@ public class CameraMovementController : MonoBehaviour
 
     IEnumerator WaitAtPosition()
     {
-        gameObject.transform.position = Vector3.Lerp(playerTankTransform.position, enemyPosition, 1f);
-        yield return new WaitForSeconds(2f);
+        gameObject.transform.position = enemyPosition;
+        yield return new WaitForSeconds(1.5f);
         isEnemySpawned = false;
     }
 

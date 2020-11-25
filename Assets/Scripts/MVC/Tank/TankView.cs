@@ -3,10 +3,10 @@ using UnityEngine.UI;
 
 public class TankView : MonoBehaviour
 {
-    public Slider playerHealthSlider;
-    public Image fillImageSlider;
-    public Color playerHealthZeroColor;
-    public Color playerHealthMaxColor;
+    [SerializeField]private Slider playerHealthSlider;
+    [SerializeField]private Image fillImageSlider;
+    private Color playerHealthZeroColor;
+    private Color playerHealthMaxColor;
 
     private void Awake()
     {

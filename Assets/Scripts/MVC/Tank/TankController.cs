@@ -10,7 +10,6 @@ public class TankController : MonoSingletonGeneric<TankController>
     private Transform playerTankTransform;
     private Joystick joystick;
     [SerializeField] private ParticleSystem tankExplosionEffect;
-
     private float playerCurrentHealth;
     private bool _isPlayerDead;
     private float tankVerticalMove, tankHorizontalMove;
@@ -93,6 +92,7 @@ public class TankController : MonoSingletonGeneric<TankController>
         tankExplosionEffect.Play();
         _isPlayerDead = true;
         gameObject.SetActive(false);
+
     }
 
 }
