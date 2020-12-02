@@ -11,7 +11,6 @@ public class TankMove : MonoBehaviour
     private float speed = 5f;
     private void Start()
     {
-        joystick = FindObjectOfType<Joystick>();
         rb3d = GetComponent<Rigidbody>();
     }
     private void Update()

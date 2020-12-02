@@ -5,13 +5,16 @@ using UnityEngine;
 public class CameraMovementController : MonoBehaviour
 {
     bool isEnemySpawned = false;
+    private float secForWait = 2f;
     [SerializeField] private Transform playerTankTransform;
     private GameObject[] enemyTank;
+    Camera cam;
     Vector3 enemyPosition;
 
     private void Awake()
     {
-        EnemyController.camMov += camMovement;
+        cam = GetComponentInChildren<Camera>();
+        EnemySpawnerService.camZoomOut += EnemySpawned;
     }
     private void Start()
     {
@@ -23,9 +26,8 @@ public class CameraMovementController : MonoBehaviour
         CameraPosition();
     }
 
-    private void camMovement()
+    private void EnemySpawned()
     {
-        enemyPosition = new Vector3(enemyTank[0].transform.position.x, gameObject.transform.position.y, enemyTank[0].transform.position.z);
         isEnemySpawned = true;
     }
 
@@ -34,18 +36,19 @@ public class CameraMovementController : MonoBehaviour
     {
         if (!isEnemySpawned)
         {
-            gameObject.transform.position = playerTankTransform.position; 
+            cam.orthographicSize = 40f;
+            gameObject.transform.position = playerTankTransform.position;
         }
         else
         {
-            StartCoroutine(WaitAtPosition());
+            cam.orthographicSize = 60f;
+            StartCoroutine(ZoomOutTimer(secForWait));
         }
     }
 
-    IEnumerator WaitAtPosition()
+    IEnumerator ZoomOutTimer(float secForWait)
     {
-        gameObject.transform.position = enemyPosition;
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(secForWait);
         isEnemySpawned = false;
     }
 

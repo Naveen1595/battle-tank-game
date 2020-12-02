@@ -10020,12 +10020,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHealthSlider: {fileID: 8639620023043708504}
   enemyfillImageSlider: {fileID: 7737665456708551804}
-  enemyHealthZeroColor: {r: 0.9433962, g: 0.1359915, b: 0.06674972, a: 0}
-  enemyHealthMaxColor: {r: 0.31179237, g: 0.8113208, b: 0.08036668, a: 0}
   enemyTankExplosionEffect: {fileID: 9048447893432057345}
   enemyTankHealth: 100
   enemyTankSpeed: 0
-  damageValue: 50
+  damageValue: 30
 --- !u!1 &7091088175975358584
 GameObject:
   m_ObjectHideFlags: 0
