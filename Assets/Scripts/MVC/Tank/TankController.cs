@@ -21,6 +21,14 @@ public class TankController : MonoSingletonGeneric<TankController>
             OnDeath();
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.GetComponent<ShellExplosion>() != null)
+        {
+            TakeDamage(25);
+        }
+    }
     private void Start()
     {
         rb3dTank = gameObject.GetComponent<Rigidbody>();

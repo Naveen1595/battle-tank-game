@@ -25,16 +25,13 @@ public class EnemyTankPatrol : EnemyTankState
         float dir = Vector3.Distance(playerTransform.position, gameObject.transform.position);
         if(dir <= chaseDistance)
         {
-            navMeshAgent.velocity = Vector3.zero;
             enemyActiveTankManager.ChangeState(enemyActiveTankManager.GetNextState());
         }
         else
         {
-            LookTowardTarget();
             CheckReached();
             if (CheckReached())
             {
-                navMeshAgent.velocity = Vector3.zero;
                 ChangeDestination();
                 MoveToDestination();
             }
@@ -50,20 +47,13 @@ public class EnemyTankPatrol : EnemyTankState
         base.OnExit();
     }
 
-    private void LookTowardTarget()
-    {
-
-        Vector3 targetDirection = destinationList[currentIndex].position - transform.position;
-        Quaternion rotateTowardTarget = Quaternion.LookRotation(targetDirection);
-        transform.rotation = rotateTowardTarget;
-    }
-
     private void ChangeDestination()
     {
-        if (currentIndex < (destinationList.Count - 1))
+        /*if (currentIndex < (destinationList.Count - 1))
             currentIndex++;
         else
-            currentIndex = 0;
+            currentIndex = 0;*/
+        currentIndex = Random.Range(0, 6);
     }
 
     private bool CheckReached()

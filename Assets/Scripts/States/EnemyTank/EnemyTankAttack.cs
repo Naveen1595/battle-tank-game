@@ -3,7 +3,7 @@ using UnityEngine.AI;
 
 public class EnemyTankAttack : EnemyTankState
 {
-    float shootTime = 0f, totalTime = 50f;
+    float shootTime = 0f, totalTime = 30f;
     [SerializeField] private float attackDistance;
     [SerializeField] private float chaseDistance;
     Transform playerTransform;
