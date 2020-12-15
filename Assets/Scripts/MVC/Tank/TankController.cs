@@ -1,12 +1,13 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TankController : MonoSingletonGeneric<TankController>
 {
     private TankModel tankNewModel;
     private TankView tankNewView;
     private Rigidbody rb3dTank;
-    [SerializeField] private Joystick joystick;
+    private Joystick joystick;
     [SerializeField] private ParticleSystem tankExplosionEffect;
     private float playerCurrentHealth;
     private bool _isPlayerDead;
@@ -31,6 +32,7 @@ public class TankController : MonoSingletonGeneric<TankController>
     }
     private void Start()
     {
+        joystick = GameObject.FindObjectOfType<Joystick>();
         rb3dTank = gameObject.GetComponent<Rigidbody>();
         _isPlayerDead = false;
     }
@@ -43,10 +45,10 @@ public class TankController : MonoSingletonGeneric<TankController>
 
     private void Update()
     {
-        /* tankVerticalMove = joystick.Vertical;
-         tankHorizontalMove = joystick.Horizontal;*/
-        tankHorizontalMove = Input.GetAxisRaw("Horizontal1");
-        tankVerticalMove = Input.GetAxisRaw("Vertical1");
+        tankVerticalMove = joystick.Vertical;
+        tankHorizontalMove = joystick.Horizontal;
+       /* tankHorizontalMove = Input.GetAxisRaw("Horizontal1");
+        tankVerticalMove = Input.GetAxisRaw("Vertical1");*/
     }
 
     //To set Model and View of Tank
@@ -98,7 +100,7 @@ public class TankController : MonoSingletonGeneric<TankController>
         tankExplosionEffect.Play();
         _isPlayerDead = true;
         gameObject.SetActive(false);
-
+        SceneManager.LoadScene(0);
     }
 
 }

@@ -2,7 +2,6 @@
 using UnityEngine;
 public class EnemySpawnerService : MonoBehaviour
 {
-    public static event Action camZoomOut;
     [SerializeField] private int noOfSpawnIdelTank;
     [SerializeField] private int noOfSpawnActiveTank;
     [SerializeField] private GameObject idelEnemyTank;
@@ -14,7 +13,6 @@ public class EnemySpawnerService : MonoBehaviour
     {
         SpawnEnemyTanks(noOfSpawnIdelTank);
         SpawnEnemyActiveTanks(noOfSpawnActiveTank);
-        camZoomOut.Invoke();
     }
 
     //Spawn Active Enemy Tank
@@ -22,14 +20,14 @@ public class EnemySpawnerService : MonoBehaviour
     {
         for (int i = 0; i < noOfSpawnActiveTank; i++)
         {
-            CreteEnemyActiveTanks();
+            CreteEnemyActiveTanks(NewPositionCreator());
         }
     }
 
     //Create Idle Enemy Tank
-    private GameObject CreteEnemyActiveTanks()
+    private GameObject CreteEnemyActiveTanks(Vector3 tankTrans)
     {
-        return Instantiate(activeEnemyTank, activeEnemyTankTrans.position, Quaternion.identity) as GameObject;
+        return Instantiate(activeEnemyTank, tankTrans, Quaternion.identity) as GameObject;
     }
 
     //Spawn Idle Enemy Tank
