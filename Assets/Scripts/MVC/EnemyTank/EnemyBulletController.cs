@@ -7,6 +7,16 @@ public class EnemyBulletController : MonoBehaviour
     public float fireForce;
     private bool isFired;
 
+    
+    private void OnTriggerEnter(Collider collision)
+    {
+        IDamageable damageControl = collision.gameObject.GetComponent<IDamageable>();
+       
+        if (damageControl != null)
+        {
+            damageControl.TakeDamage(25);
+        }
+    }
     private void Update()
     {
         if (isFired)

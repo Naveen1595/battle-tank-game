@@ -1178,7 +1178,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -9.8, y: -7.17}
+  m_AnchoredPosition: {x: -9.799988, y: -7.1700134}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1739437666
@@ -1290,15 +1290,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3243d1fcbf475374cbd28892a5cf21de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noOfSpawnIdelTank: 2
-  noOfSpawnActiveTank: 1
+  noOfSpawnIdelTank: 1
+  noOfSpawnActiveTank: 0
   idelEnemyTank: {fileID: 6224467204050822874, guid: ce189b01a19a92e41aa1b30b59264d58,
     type: 3}
-  idelEnemyTankTrans: {fileID: 2198871243311473962, guid: ce189b01a19a92e41aa1b30b59264d58,
-    type: 3}
   activeEnemyTank: {fileID: 1282159978548032445, guid: f5ca152ee2938c94693111d58c2c229b,
-    type: 3}
-  activeEnemyTankTrans: {fileID: 1282159978548063837, guid: f5ca152ee2938c94693111d58c2c229b,
     type: 3}
 --- !u!4 &2119134414
 Transform:

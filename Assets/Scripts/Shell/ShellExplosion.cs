@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class ShellExplosion : MonoBehaviour
 {
-    public ParticleSystem shellExplosionEffect;   
+    public ParticleSystem shellExplosionEffect;
+
+
     private void OnTriggerEnter(Collider other)
     {
         shellExplosionEffect.transform.parent = null;

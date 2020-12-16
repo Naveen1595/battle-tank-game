@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4529974750296709058}
   - component: {fileID: 4529974750296709061}
   - component: {fileID: 5869772053972608443}
+  - component: {fileID: 7292822813537038206}
   m_Layer: 0
   m_Name: Shell
   m_TagString: Shell
@@ -124,6 +125,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shellExplosionEffect: {fileID: 4529974749138201858}
+--- !u!114 &7292822813537038206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4529974750296740198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a2515b208b492c4cabc46ed02feee70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4529974749122596884
 PrefabInstance:
   m_ObjectHideFlags: 0

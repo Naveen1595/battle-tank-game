@@ -17,7 +17,7 @@ public class TankController : MonoSingletonGeneric<TankController>
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.GetComponent<EnemyController>() !=null)
+        if(collision.gameObject.GetComponent<ActiveEnemyController>() !=null)
         {
             OnDeath();
         }
@@ -45,10 +45,10 @@ public class TankController : MonoSingletonGeneric<TankController>
 
     private void Update()
     {
-        tankVerticalMove = joystick.Vertical;
-        tankHorizontalMove = joystick.Horizontal;
-       /* tankHorizontalMove = Input.GetAxisRaw("Horizontal1");
-        tankVerticalMove = Input.GetAxisRaw("Vertical1");*/
+        /*tankVerticalMove = joystick.Vertical;
+        tankHorizontalMove = joystick.Horizontal;*/
+        tankHorizontalMove = Input.GetAxisRaw("Horizontal1");
+        tankVerticalMove = Input.GetAxisRaw("Vertical1");
     }
 
     //To set Model and View of Tank

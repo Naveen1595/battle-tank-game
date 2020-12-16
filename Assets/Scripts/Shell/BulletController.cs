@@ -34,4 +34,5 @@ public class BulletController : MonoBehaviour
         Rigidbody shellInstance = Instantiate(shellRDBD, aimTransform.position, aimTransform.rotation) as Rigidbody;
         shellInstance.velocity = fireForce * aimTransform.forward;
     }
+
 }

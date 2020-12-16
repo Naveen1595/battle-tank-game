@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EnemyController : MonoBehaviour
+public class ActiveEnemyController : MonoBehaviour,IDamageable
 {
 
     [SerializeField] private Slider enemyHealthSlider;
@@ -20,13 +20,6 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float damageValue;
     private bool _isEnemyDead;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.GetComponent<ShellExplosion>() != null)
-        {
-            TakeDamage(damageValue);
-        }
-    }
 
     private void OnCollisionEnter(Collision collision)
     {

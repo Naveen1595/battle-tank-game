@@ -1,13 +1,10 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 public class EnemySpawnerService : MonoBehaviour
 {
     [SerializeField] private int noOfSpawnIdelTank;
     [SerializeField] private int noOfSpawnActiveTank;
     [SerializeField] private GameObject idelEnemyTank;
-    [SerializeField] private Transform idelEnemyTankTrans;
     [SerializeField] private GameObject activeEnemyTank;
-    [SerializeField] private Transform activeEnemyTankTrans;
 
     private void Start()
     {
@@ -48,7 +45,7 @@ public class EnemySpawnerService : MonoBehaviour
     //Random Position
     private Vector3 NewPositionCreator()
     {
-        return new Vector3(UnityEngine.Random.Range(-30f, 35f), idelEnemyTankTrans.position.y, UnityEngine.Random.Range(-15f, 35f));
+        return new Vector3(UnityEngine.Random.Range(-30f, 35f), idelEnemyTank.transform.position.y, UnityEngine.Random.Range(-15f, 35f));
     }
 
 }
