@@ -1,13 +1,15 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 public class EnemySpawnerService : MonoBehaviour
 {
     [SerializeField] private int noOfSpawnIdelTank;
     [SerializeField] private int noOfSpawnActiveTank;
     [SerializeField] private GameObject idelEnemyTank;
     [SerializeField] private GameObject activeEnemyTank;
-
+    List<GameObject> listOfEnemyGameObjects = new List<GameObject>();
     private void Start()
     {
+        
         SpawnEnemyTanks(noOfSpawnIdelTank);
         SpawnEnemyActiveTanks(noOfSpawnActiveTank);
     }
@@ -17,7 +19,8 @@ public class EnemySpawnerService : MonoBehaviour
     {
         for (int i = 0; i < noOfSpawnActiveTank; i++)
         {
-            CreteEnemyActiveTanks(NewPositionCreator());
+            GameObject activeEnemyGameObject = CreteEnemyActiveTanks(NewPositionCreator());
+            listOfEnemyGameObjects.Add(activeEnemyGameObject);
         }
     }
 
@@ -32,7 +35,8 @@ public class EnemySpawnerService : MonoBehaviour
     {
         for(int i=0;i< noOfSpawnTank;i++)
         {
-            CreteEnemyTanks(NewPositionCreator());
+            GameObject idleEnemyGameObject = CreteEnemyTanks(NewPositionCreator());
+            listOfEnemyGameObjects.Add(idleEnemyGameObject);
         }
     }
 
@@ -47,5 +51,17 @@ public class EnemySpawnerService : MonoBehaviour
     {
         return new Vector3(UnityEngine.Random.Range(-30f, 35f), idelEnemyTank.transform.position.y, UnityEngine.Random.Range(-15f, 35f));
     }
+
+
+    public int GetNoOfEnemy()
+    {
+        return (noOfSpawnIdelTank + noOfSpawnActiveTank);
+    }
+
+    public List<GameObject> GetEnemy()
+    {
+        return listOfEnemyGameObjects;
+    }
+
 
 }

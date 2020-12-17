@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -15,6 +16,7 @@ public class TankController : MonoSingletonGeneric<TankController>
     private Vector3 movement;
     private Quaternion turnRotation;
 
+    public event Action PlayerDeath; 
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.GetComponent<ActiveEnemyController>() !=null)
@@ -99,8 +101,19 @@ public class TankController : MonoSingletonGeneric<TankController>
         tankExplosionEffect.transform.parent = null;
         tankExplosionEffect.Play();
         _isPlayerDead = true;
-        gameObject.SetActive(false);
-        SceneManager.LoadScene(0);
+
+        PlayerDeath?.Invoke();
+        /*StartCoroutine(GameEnd());
+        gameObject.SetActive(false);*/
+
     }
 
+    /*IEnumerator GameEnd()
+    {
+        yield return new WaitForSeconds(5);
+        Debug.Log("sec");
+        SceneManager.LoadScene(0);
+
+    }*/
+  
 }

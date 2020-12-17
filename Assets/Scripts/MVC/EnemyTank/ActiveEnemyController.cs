@@ -67,7 +67,7 @@ public class ActiveEnemyController : MonoBehaviour,IDamageable
         }
     }
 
-    private void OnDeath()
+    public void OnDeath()
     {
         ExplosionEffect();
         _isEnemyDead = true;
